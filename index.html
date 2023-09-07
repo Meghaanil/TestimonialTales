@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; 
+            overflow: hidden;
+            width: 100%;
+            height: 80%;
+            
+        }
+
+        .video-container video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .carousel-arrows {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 100%;
+            text-align: center;
+        }
+
+        .carousel-arrow {
+            display: inline-block;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 24px;
+            color: white;
+        }
+        p{
+            text-align: justify;
+        }
+        .container .heading {
+            color:rgb(17, 57, 126);;
+}
+/* CSS for moving arrows outside the video container */
+        #prev-video {
+            left: 0;
+            transform: translateX(-100%);
+        }
+
+        #next-video {
+            right: 0;
+            transform: translateX(100%);
+        }
+        /* Increase space and size of carousel arrows */
+        .carousel-arrows .carousel-arrow {
+            display: inline-block;
+            padding: 20px 20px; 
+            cursor: pointer;
+            font-size: 24px; 
+        }
+/* CSS for hiding default video controls */
+        .video-container video::-webkit-media-controls {
+            display: none !important;
+        }
+
+        /* CSS for custom play and pause buttons */
+        .custom-controls {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 10px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .custom-controls i {
+            color: white;
+            font-size: 24px;
+        }
+        .larger-video-box {
+            height: 300px; /* Set the desired height for the larger box */
+        }
+        
+    </style>
+</head>
+<body>
+    
+<div class="container">
+
+    <h1 class="heading">Testimonials</h1>
+
+    <div class="box-container">
+
+        <div class="box" style="background-color: rgb(17, 57, 126); color: white;">
+           
+            <p style="color: white;">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p><br>
+           <p style="color: white; text-align: left;"  >Amil Nasar A</p>
+           <p style="color: white; text-align: left;">Class 7</p>
+           
+        </div>
+
+        <div class="box" style="background-color: rgb(74, 53, 16); color: white;">
+           
+            <p style="color: white;">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p><br>
+           
+            <p style="color: white; text-align: left;" > John Luke</p>
+            
+           <p style="color: white; text-align: left;">CEO-XYZ Company</p>
+        </div>
+
+
+        <div class="box" style="background-color: rgb(74, 53, 16);;">
+            <div class="larger-video-box">
+            <h3 style="color: white;">Event Reviews</h3>
+            <div class="video-container">
+                <video id="video-carousel" preload="metadata">
+                    <source src="vid1.mp4" type="video/mp4">
+                    <source src="vid2.mp4" type="video/mp4">
+                    <source src="vid3.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="carousel-arrows">
+                    <span class="carousel-arrow" id="prev-video">&lt; </span>
+                    <span class="carousel-arrow" id="next-video"> &gt;</span>
+                </div>
+                <div class="custom-controls">
+                    <i id="play-btn" class="fa fa-play"></i>
+                    <i id="pause-btn" class="fa fa-pause" style="display: none;"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+
+
+
+
+        <div class="box" style="background-color: rgb(74, 53, 16); color: white;">
+           
+            <p style="color: white;">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p><br>
+           
+            <p style="color: white; text-align: left;"  >John Luke</p>
+           <p style="color: white; text-align: left;">CEO-XYZ Company</p>
+           
+        </div>
+        <div class="box" style="background-color: rgb(17, 57, 126); color: white;">
+           
+            <p style="color: white;">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p><br>
+           <p style="color: white; text-align: left;"  >John Luke</p>
+           <p style="color: white; text-align: left;">CEO-XYZ Company</p>
+           
+        </div>
+
+    </div>
+
+</div>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+<script>
+    const videoCarousel = document.getElementById("video-carousel");
+    const prevVideoButton = document.getElementById("prev-video");
+    const nextVideoButton = document.getElementById("next-video");
+    const playButton = document.getElementById("play-btn");
+    const pauseButton = document.getElementById("pause-btn");
+
+    // Define an array of video sources
+    const videoSources = [
+        "vid1.mp4",
+        "vid2.mp4",
+        "vid3.mp4"
+    ];
+
+    let currentVideoIndex = 0;
+
+    // Function to update the video source
+    function updateVideoSource() {
+        videoCarousel.src = videoSources[currentVideoIndex];
+        videoCarousel.load();
+    }
+
+    // Play the video
+    function playVideo() {
+        videoCarousel.play();
+        playButton.style.display = "none";
+        pauseButton.style.display = "inline-block";
+    }
+
+    // Pause the video
+    function pauseVideo() {
+        videoCarousel.pause();
+        playButton.style.display = "inline-block";
+        pauseButton.style.display = "none";
+    }
+
+    // Event listeners for next and previous video buttons
+    nextVideoButton.addEventListener("click", () => {
+        currentVideoIndex = (currentVideoIndex + 1) % videoSources.length;
+        updateVideoSource();
+        playVideo(); // Play the next video
+    });
+
+    prevVideoButton.addEventListener("click", () => {
+        currentVideoIndex = (currentVideoIndex - 1 + videoSources.length) % videoSources.length;
+        updateVideoSource();
+        playVideo(); // Play the previous video
+    });
+
+    // Event listener for play button
+    playButton.addEventListener("click", playVideo);
+
+    // Event listener for pause button
+    pauseButton.addEventListener("click", pauseVideo);
+
+    // Play the first video by default
+    playVideo();
+</script>
+
+</body>
+</html>
