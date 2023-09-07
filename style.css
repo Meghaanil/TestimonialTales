@@ -38,9 +38,7 @@
     padding:30px 20px;
 }
 
-.container .box-container .box img{
-    height: 80px;
-}
+
 
 .container .box-container .box h3{
     color:#444;
@@ -54,15 +52,7 @@
     line-height: 1.8;
 }
 
-.container .box-container .box .btn{
-    margin-top: 10px;
-    display: inline-block;
-    background:#333;
-    color:#fff;
-    font-size: 17px;
-    border-radius: 5px;
-    padding: 8px 25px;
-}
+
 
 .container .box-container .box .btn:hover{
     letter-spacing: 1px;
